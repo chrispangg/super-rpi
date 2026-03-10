@@ -24,3 +24,4 @@
     - codebase-research-locator - add tools: Read, Grep, Glob, LS, Bash, model: haiku, color: green
     - codebase-research-analyzer - add tools: Read, Grep, Glob, LS, Bash, model: haiku, color: blue
     - web-search-researcher - add tools: WebSearch, WebFetch, TodoWrite, Read, Grep, Glob, LS, Skill(deepwiki), Skill(grep), Skill(agent-browser), model: sonnet, color: yellow
+8. Let the user know that the installation is complete and they can now use the SUPER-RPI commands. Ask them if they need an example of how to use the commands.
