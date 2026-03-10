@@ -3,8 +3,10 @@
 ## Steps
 
 1. make sure claude code cli is installed
-2. ask if user want to install this in local-scoped, project-scoped or user-scoped.
-3. <<instructions for each scope>>
+2. ask if user want to install this in project-scoped or user-scoped.
+3. **Choose your installation scope:**
+   - **User-scoped** (`~/.claude/`): Available across all your projects. Create `~/.claude/` directory.
+   - **Project-scoped** (`.claude/` in repo): Shared with all collaborators. Create `.claude/` in project root.
 4. clone this repo and place it in the scoped directory
 5. update the settings.json file in the existing .claude folder to align with the content in the repo's .claude directory(don't replace user's existing settings.json content if they already have a settings.json file) - explain to them `bypassPermissions` is required for the commands to work properly
 6. Then move the rest of the agents, commands, skills folders to the scoped .claude directory
