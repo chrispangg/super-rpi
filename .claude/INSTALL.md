@@ -3,7 +3,7 @@
 ## Steps
 
 1. make sure claude code cli is installed
-1. ask if user want to install this in project-scoped or user-scoped.
+1. ask if user (using the AskUserQuestion tool) want to install this in project-scoped or user-scoped.
 1. **Choose your installation scope:**
    - **User-scoped** (`~/.claude/`): Available across all your projects. Create `~/.claude/` directory.
    - **Project-scoped** (`.claude/` in repo): Shared with all collaborators. Create `.claude/` in project root.
@@ -14,7 +14,7 @@
         ```markdown
         ---
         name: codebase-analyzer
-        description: Analyzes codebase implementation details. Call the codebase-analyzer agent when you need to find detailed information about specific components. As always, the more detailed your request prompt, the better! :)
+        description: Analyzes codebase implementation details. Call the codebase-analyzer agent when you need to find detailed information about specific components. As always, the more detailed your request prompt, the better!
         tools: Read, Grep, Glob, LS
         model: sonnet
         color: orange
