@@ -1,6 +1,6 @@
 # Super RPI
 
-**Super RPI** combines the best of [HumanLayer's RPI framework](https://github.com/humanlayer/humanlayer) with [Obra's Superpowers](https://github.com/obra/superpowers) to create a powerful, flexible, and opinionated framework for AI coding agents.
+**Super RPI** combines the best of [HumanLayer's RPI framework](https://github.com/humanlayer/humanlayer), [Obra's Superpowers](https://github.com/obra/superpowers), and [Garry Tan's gstack](https://github.com/garrytan/gstack) to create a powerful, flexible, and opinionated framework for AI coding agents.
 
 ---
 
@@ -26,9 +26,19 @@ The **RPI framework** (from [HumanLayer](https://github.com/humanlayer/humanlaye
 
 ---
 
+## What is gstack?
+
+[gstack](https://github.com/garrytan/gstack) is a collection of opinionated workflow skills for Claude Code created by [Garry Tan](https://x.com/garrytan), President & CEO of [Y Combinator](https://www.ycombinator.com/). It gives AI coding agents distinct cognitive modes — founder, engineer, reviewer, release manager — so you can tell the model what kind of thinking you need right now, instead of getting one generic blend.
+
+Super RPI's `reviewing-plans` skill is adapted from gstack's `/plan-ceo-review` — the "founder mode." We adopted this skill specifically because **engineers (and AI agents) default to engineering rigour and forget they are building a product for end users.** As Garry puts it: a weak assistant told to "add photo upload" will add a file picker and save an image. That is not the real product. The real product might be helping someone create a listing that actually sells — auto-identifying the product from the photo, drafting the title and description, suggesting the best hero image.
+
+`/plan-ceo-review` forces the model to ask a different question before implementation begins: **"What is the 10-star product hiding inside this request?"** It challenges whether you are even solving the right problem, not just whether you are solving the problem correctly. That product-first thinking is what was missing from a purely engineering-driven RPI workflow, and why we brought it in.
+
+---
+
 ## Why Super RPI?
 
-This project was created to bridge the gap between these two excellent frameworks, giving you:
+This project was created to bridge the gap between these excellent frameworks, giving you:
 
 ### 1. From HumanLayer's RPI Framework
 
@@ -45,7 +55,12 @@ This project was created to bridge the gap between these two excellent framework
 - **Self-configuring** - Leverages agent capabilities for setup and configuration
 - **Multi-platform support** - Works across Claude Code, OpenCode, Cursor, and Codex
 
-### 3. Opinionated Tools
+### 3. From Garry Tan's gstack
+
+- **Product-first plan review** - Challenge whether you're building the right thing, not just building the thing right
+- **Scope modes** - Three review postures (expand, hold, reduce) to match the situation instead of one-size-fits-all rigour
+
+### 4. Opinionated Tools
 
 - **grep** - Searchable code index over GitHub codebases for looking up library usage examples
 - **deepwiki** - AI-written documentation lookup for understanding libraries internally
@@ -153,6 +168,14 @@ Documents the codebase as-is and creates research artifacts for historical conte
 
 Interactively creates a detailed implementation plan through an iterative process with you.
 
+#### 2.5. Review the Plan
+
+```
+/2.5_review-plan
+```
+
+CEO/founder-mode plan review with three modes: SCOPE EXPANSION (dream big), HOLD SCOPE (maximum rigour), or SCOPE REDUCTION (strip to essentials). Challenges premises, maps failure modes, and hardens the plan before implementation.
+
 #### 3. Define Test Cases
 
 ```
@@ -195,7 +218,7 @@ For smaller tasks, run the entire RPI workflow in one command:
 /oneshot_rpi <ticket-number>
 ```
 
-This runs all 6 steps automatically: research → plan → test cases → implement → validate → iterate.
+This runs the full workflow automatically: research -> plan -> review -> test cases -> implement -> validate.
 
 ---
 
@@ -230,6 +253,10 @@ You: /2_create-plan
 
 Agent: [Interactively designs solution with you, creates plan.md]
 
+You: /2.5_review-plan
+
+Agent: [Reviews the plan with rigour, challenges premises, maps failure modes, creates plan-review.md]
+
 You: /4_implement-plan
 
 Agent: [Executes plan using sub-agents, handles all implementation]
@@ -247,6 +274,7 @@ That's it! The slash commands handle all the complexity - agent invocation, skil
 
 - [HumanLayer RPI Framework](https://github.com/humanlayer/humanlayer) - The original RPI framework
 - [Obra's Superpowers](https://github.com/obra/superpowers) - Skill-based agent framework
+- [Garry Tan's gstack](https://github.com/garrytan/gstack) - CEO/founder-mode plan review skill (`reviewing-plans`) adapted from gstack's `/plan-ceo-review`
 - [12-Factor Agents](https://github.com/humanlayer/humanlayer) - Principles for reliable LLM applications
 - [Advanced Context Engineering](https://humanlayer.dev) - Talk on solving hard problems with AI
 

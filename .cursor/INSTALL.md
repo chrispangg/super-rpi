@@ -2,7 +2,7 @@
 
 ## Steps
 
-1. make sure Cursor IDE is installed (download from https://cursor.com)
+1. make sure Cursor IDE is installed (download from <https://cursor.com>)
 1. ask if user (using the question tool) want to install this in project-scoped or user-scoped.
 1. **Choose your installation scope:**
    - **User-scoped**: Rules are stored in Cursor Settings and apply globally
@@ -19,7 +19,7 @@
         globs:
         alwaysApply: false
         ---
-        
+
         Your rule content here...
         ```
     Now apply this metadata to the following agents:
@@ -51,6 +51,7 @@
    - Uses plain markdown without frontmatter
    - Nested AGENTS.md files in subdirectories are automatically applied
    - Example:
+
         ```markdown
         # Project Instructions
 
@@ -58,6 +59,7 @@
         - Use TypeScript for all new files
         - Prefer functional components
         ```
+
 1. Let the user know that the installation is complete and they can now use the SUPER-RPI commands. Ask them if they need an example of how to use the commands.
 
 ## Important Notes
