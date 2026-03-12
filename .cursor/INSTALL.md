@@ -24,20 +24,38 @@
         ```
     Now apply this metadata to the following agents:
     - codebase-analyzer - read-only agent for analyzing code details
+      - name: codebase-analyzer
       - description: "Analyzes codebase implementation details"
       - alwaysApply: false (or true if you want it always applied)
       - Rule type: Apply Intelligently (based on description) or Apply Manually
+      - model: composer-1.5
+      - readonly: true
     - codebase-locator - fast read-only agent for finding files
+      - name: codebase-locator
       - description: "Locates files and components in the codebase"
       - globs: [] (optional file patterns)
+      - model: composer-1.5
+      - readonly: true
     - codebase-pattern-finder - agent for finding code patterns
+      - name: codebase-pattern-finder
       - description: "Finds patterns and idioms in the codebase"
+      - model: composer-1.5
+      - readonly: true
     - codebase-research-locator - agent for research and locating code
+      - name: codebase-research-locator
       - description: "Researches and locates code"
+      - model: composer-1.5
+      - readonly: true
     - codebase-research-analyzer - agent for research and analysis
+      - name: codebase-research-analyzer
       - description: "Researches and analyzes code"
+      - model: composer-1.5
+      - readonly: true
     - web-search-researcher - agent for web research
+      - name: web-search-researcher
       - description: "Performs web research and searches"
+      - model: composer-1.5
+      - readonly: true
 1. Rule Types in Cursor:
    - **Always Apply**: Apply to every chat session (set `alwaysApply: true`)
    - **Apply Intelligently**: When Agent decides it's relevant based on description

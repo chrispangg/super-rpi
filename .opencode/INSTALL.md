@@ -31,26 +31,32 @@
       - mode: subagent
       - tools: write: false, edit: false, bash: false
       - color: orange
+      - model: kimi-k2.5
     - codebase-locator - fast read-only agent for finding files
       - mode: subagent
       - tools: write: false, edit: false, bash: false
       - color: orange
+      - model: kimi-k2.5
     - codebase-pattern-finder - agent for finding code patterns
       - mode: subagent
       - tools: write: false, edit: false, bash: false
       - color: red
+      - model: kimi-k2.5
     - codebase-research-locator - agent for research and locating code
       - mode: subagent
       - tools: write: false, edit: false, bash: true
       - color: green
+      - model: kimi-k2.5
     - codebase-research-analyzer - agent for research and analysis
       - mode: subagent
       - tools: write: false, edit: false, bash: true
       - color: blue
+      - model: kimi-k2.5
     - web-search-researcher - agent for web research
       - mode: subagent
       - tools: write: false, edit: false, bash: false
       - color: yellow
+      - model: kimi-k2.5
 1. For commands, OpenCode also uses YAML frontmatter in markdown files. The metadata format should look like:
         ```markdown
         ---
