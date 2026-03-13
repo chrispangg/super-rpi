@@ -18,7 +18,7 @@
         ---
         description: Analyzes codebase implementation details. Call the codebase-analyzer agent when you need to find detailed information about specific components. As always, the more detailed your request prompt, the better!
         mode: subagent
-        model: kimi-k2.5
+        model: opencode-go/kimi-k2.5
         tools:
           write: false
           edit: false
@@ -29,33 +29,33 @@
     - codebase-analyzer - read-only agent for analyzing code details
       - mode: subagent
       - tools: write: false, edit: false, bash: false
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
     - codebase-locator - fast read-only agent for finding files
       - mode: subagent
       - tools: write: false, edit: false, bash: false
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
     - codebase-pattern-finder - agent for finding code patterns
       - mode: subagent
       - tools: write: false, edit: false, bash: false
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
     - codebase-research-locator - agent for research and locating code
       - mode: subagent
       - tools: write: false, edit: false, bash: true
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
     - codebase-research-analyzer - agent for research and analysis
       - mode: subagent
       - tools: write: false, edit: false, bash: true
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
     - web-search-researcher - agent for web research
       - mode: subagent
       - tools: write: false, edit: false, bash: false
-      - model: kimi-k2.5
+      - model: opencode-go/kimi-k2.5
 1. For commands, OpenCode also uses YAML frontmatter in markdown files. The metadata format should look like:
         ```markdown
         ---
         description: Description of what the command does
         agent: build
-        model: kimi-k2.5
+        model: opencode-go/kimi-k2.5
         ---
         ```
    The content after the frontmatter becomes the command template/prompt. Commands are placed in the `commands/` directory.
